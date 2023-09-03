@@ -7,7 +7,7 @@ from s3fs import S3FileSystem
 def main():
     consumer = KafkaConsumer(
         'demo-test',
-        bootstrap_servers=['18.222.191.141:9092'], 
+        bootstrap_servers=['INSERT_AWS_PUBLIC_IP:9092'], # Insert AWS Public IP
         value_deserializer=lambda x: loads(x.decode('utf-8')))
 
     s3 = S3FileSystem()

@@ -6,17 +6,10 @@ import json
 
 def main():
     
-    producer = KafkaProducer(bootstrap_servers=['18.222.191.141:9092'], 
+    producer = KafkaProducer(bootstrap_servers=['INSERT_AWS_PUBLIC_IP:9092'], # Insert AWS Public IP
                             value_serializer=lambda x: 
                             dumps(x).encode('utf-8'))
 
-
-    # while True:
-    #     user_input = input("Enter a message: ")
-    #     producer.send('demo-test', value=user_input)
-    #     producer.flush()
-    #     print("Message sent!")
-    #     sleep(1)
         
     df = pd.read_csv('indexProcessed.csv')
     
